@@ -8,6 +8,8 @@ let updateFreq = 10;
 
 if(!fs.existsSync('./counter.txt')){
   fs.writeFileSync('./counter.txt', "0");
+}else{
+  counter = fs.readFileSync("./counter.txt");
 }
 
 wss.on('connection', function connection(ws) {
